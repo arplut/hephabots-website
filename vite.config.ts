@@ -7,7 +7,7 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   // When deploying as a GitHub Pages project site (https://<owner>.github.io/hephabots-website/)
   // we need the build `base` to point to the repo path so assets resolve correctly.
-  base: mode === "production" ? "/hephabots-website/" : "/",
+  base: "/hephabots-website/",
   server: {
     host: "::",
     port: 8080,
