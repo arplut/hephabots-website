@@ -76,7 +76,7 @@ export const EarlyAccess = () => {
             Interest Form
           </h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-            We’re seeking collaborators to pilot and refine our early solutions for smarter inspection and maintenance across industries. Express interest to access early-backer discounts.
+            We’re seeking collaborators to pilot and refine our early solutions for smarter inspection and maintenance across industries. Express interest now to get potential early-backer discounts.
           </p>
         </div>
 
