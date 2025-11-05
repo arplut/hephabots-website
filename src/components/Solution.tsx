@@ -1,22 +1,23 @@
-import { Brain, Move, Zap } from "lucide-react";
+import { Brain, Move, Layers } from "lucide-react";
 
 const innovations = [
   {
-    icon: Brain,
-    title: "AI-Driven Autonomy",
-    description: "Intelligent navigation and real-time decision-making without human intervention."
-  },
-  {
     icon: Move,
-    title: "Flexible Robotics",
-    description: "Advanced manipulators reach tight spaces and adapt to complex environments."
+    title: "Compact & Versatile",
+    description: "A small, agile form factor enables precise positioning and access to diverse perspectives"
   },
   {
-    icon: Zap,
-    title: "Fast & Reliable",
-    description: "Continuous monitoring with instant alerts and actionable insights."
+    icon: Layers,
+    title: "Modular & Custom Sensors",
+    description: "Interchangeable sensor modules tailored for custom inspection needs and rapid reconfiguration."
+  },
+  {
+    icon: Brain,
+    title: "Efficient & Intelligent Sensing",
+    description: "AI-enhanced sensing optimises data collection, delivering accurate insights with minimal overhead."
   }
 ];
+
 
 export const Solution = () => {
   return (
@@ -27,7 +28,7 @@ export const Solution = () => {
             Our Solution
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Cutting-edge robotics meets artificial intelligence for inspection excellence
+            Compact, intelligent robots that can provide inspection from any viewpoint (angle, position and height) for custom and precise monitoring.
           </p>
         </div>
 
