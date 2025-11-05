@@ -14,7 +14,7 @@ export const EarlyAccess = () => {
     e.preventDefault();
     
     // Simple validation
-    if (!email || !company) {
+    if (!email) {
       toast({
         title: "Missing information",
         description: "Please fill in all fields",
@@ -35,8 +35,8 @@ export const EarlyAccess = () => {
         body: JSON.stringify({
           access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
           email: email,
-          company: company,
-          subject: "New Early Access Request from Hephabots Website",
+          company: company || "",
+          subject: "Website Customer Request",
           from_name: "Hephabots Website",
         }),
       });
@@ -46,7 +46,7 @@ export const EarlyAccess = () => {
       if (result.success) {
         toast({
           title: "Success! 🎉",
-          description: "You're on the list. We'll be in touch soon!",
+          description: "We've registered your interest. We'll be in touch soon!",
         });
         setEmail("");
         setCompany("");
@@ -73,10 +73,10 @@ export const EarlyAccess = () => {
             <Mail className="w-8 h-8 text-secondary" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            Join Early Access
+            Interest Form
           </h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Be among the first to revolutionize your inspection process. Limited spots available.
+            We’re seeking collaborators to pilot and refine our early solutions for smarter inspection and maintenance across industries. Express interest to access early-backer discounts.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export const EarlyAccess = () => {
           <div className="bg-card/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl p-8">
             <div className="space-y-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-primary-foreground/90 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-primary-foreground/95 mb-2">
                   Work Email
                 </label>
                 <Input
@@ -93,13 +93,13 @@ export const EarlyAccess = () => {
                   placeholder="you@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-background/50 border-primary-foreground/20 text-foreground placeholder:text-muted-foreground focus:border-secondary"
+                  className="bg-background/50 border-primary-foreground/20 text-foreground placeholder:text-foreground focus:border-secondary"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-primary-foreground/90 mb-2">
+                <label htmlFor="company" className="block text-sm font-medium text-primary-foreground/95 mb-2">
                   Company Name
                 </label>
                 <Input
@@ -108,7 +108,7 @@ export const EarlyAccess = () => {
                   placeholder="Your company"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  className="bg-background/50 border-primary-foreground/20 text-foreground placeholder:text-muted-foreground focus:border-secondary"
+                  className="bg-background/50 border-primary-foreground/20 text-foreground placeholder:text-foreground focus:border-secondary"
                   required
                 />
               </div>
@@ -120,7 +120,7 @@ export const EarlyAccess = () => {
                 className="w-full text-lg mt-6"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "Request Access"}
+                {isSubmitting ? "Submitting..." : "Submit"}
               </Button>
             </div>
           </div>

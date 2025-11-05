@@ -3,20 +3,21 @@ import { DollarSign, Map, AlertCircle } from "lucide-react";
 const problems = [
   {
     icon: DollarSign,
-    title: "Sky-High Costs",
-    description: "Traditional inspection methods drain budgets with labor-intensive processes and equipment downtime."
-  },
-  {
-    icon: Map,
-    title: "Inaccessible Areas",
-    description: "Critical infrastructure in confined spaces or hazardous zones remains uninspected and vulnerable."
+    title: "Unplanned Downtime",
+    description: "Unexpected equipment failures halt production and can lead to millions in losses per hour."
   },
   {
     icon: AlertCircle,
-    title: "Inconsistent Monitoring",
-    description: "Manual inspections lead to gaps in coverage, missed defects, and unpredictable quality."
+    title: "Yield Loss",
+    description: "Microscopic contaminants cause batch failures and significant yield degradation in precision manufacturing."
+  },
+  {
+    icon: Map,
+    title: "Inefficient Maintenance",
+    description: "Manual checks, reactive workloads and labour strain reduce productivity and stretch operational resources."
   }
 ];
+
 
 export const Problem = () => {
   return (
