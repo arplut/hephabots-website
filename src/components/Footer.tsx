@@ -3,7 +3,8 @@ export const Footer = () => {
     <footer className="py-8 px-6 bg-background border-t border-border">
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Hephabots Preview.
+          {/* ©  */}
+          {new Date().getFullYear()} Hephabots (Pre-Incorporation). All rights reserved.
         </p>
       </div>
     </footer>

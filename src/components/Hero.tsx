@@ -76,13 +76,13 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 animate-fade-in">
-          Autonomous Inspection,
-          <span className="block text-secondary mt-2">Reimagined</span>
+        <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-6 animate-fade-in">
+          Autonomous Inspection Robots
+          <span className="block text-secondary mt-2">for Semiconductor Fabs</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          AI-powered robots that reach where humans can't, inspect what they miss, and deliver insights faster than ever.
+          Detect anomalies and contamination before they cause downtime or yield loss with our mobile robots built for remote monitoring and autonomous inspection in ultra-clean, high-precision environments.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
@@ -92,16 +92,9 @@ export const Hero = () => {
             onClick={scrollToForm}
             className="text-lg"
           >
-            Join Early Access
+            Register Your Interest
           </Button>
-          <Button 
-            size="lg" 
-            variant="heroPrimary"
-            onClick={scrollToForm}
-            className="text-lg"
-          >
-            Learn More
-          </Button>
+          
         </div>
 
         {/* Scroll indicator */}

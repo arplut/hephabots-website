@@ -7,9 +7,10 @@ import { Mail } from "lucide-react";
 export const EarlyAccess = () => {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple validation
@@ -22,16 +23,46 @@ export const EarlyAccess = () => {
       return;
     }
 
-    // Here you would typically send to a backend/form service
-    console.log({ email, company });
-    
-    toast({
-      title: "Success! 🎉",
-      description: "You're on the list. We'll be in touch soon!",
-    });
+    setIsSubmitting(true);
 
-    setEmail("");
-    setCompany("");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          email: email,
+          company: company,
+          subject: "New Early Access Request from Hephabots Website",
+          from_name: "Hephabots Website",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Success! 🎉",
+          description: "You're on the list. We'll be in touch soon!",
+        });
+        setEmail("");
+        setCompany("");
+      } else {
+        throw new Error(result.message || "Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -87,8 +118,9 @@ export const EarlyAccess = () => {
                 size="lg" 
                 variant="hero"
                 className="w-full text-lg mt-6"
+                disabled={isSubmitting}
               >
-                Request Access
+                {isSubmitting ? "Submitting..." : "Request Access"}
               </Button>
             </div>
           </div>
