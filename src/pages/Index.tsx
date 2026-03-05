@@ -1,21 +1,19 @@
-import { Hero } from "@/components/Hero";
-import { Problem } from "@/components/Problem";
-import { Solution } from "@/components/Solution";
-import { Value } from "@/components/Value";
-import { EarlyAccess } from "@/components/EarlyAccess";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import ApplicationsSection from "@/components/ApplicationsSection";
+import LocationSection from "@/components/LocationSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Hero />
-      <Problem />
-      <Solution />
-      <Value />
-      <EarlyAccess />
-      <Footer />
-    </div>
-  );
-};
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Navbar />
+    <HeroSection />
+    <ApplicationsSection />
+    <LocationSection />
+    <ContactSection />
+    <Footer />
+  </div>
+);
 
 export default Index;
