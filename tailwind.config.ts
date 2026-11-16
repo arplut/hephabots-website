@@ -7,15 +7,14 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: { DEFAULT: "1rem", sm: "1.5rem", lg: "2rem" },
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        display: ["Libre Franklin", "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Libre Franklin", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

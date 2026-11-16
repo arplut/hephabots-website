@@ -1,19 +1,28 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ApplicationsSection from "@/components/ApplicationsSection";
-import LocationSection from "@/components/LocationSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/landing/Navbar";
+import { Different, Hero, Team, WhereItWorks, Why } from "@/components/landing/Sections";
+import ContactSection from "@/components/landing/ContactSection";
+import Footer, { WhatsAppFloat } from "@/components/landing/Footer";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <>
+    <a
+      href="#main"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-card focus:px-4 focus:py-2"
+    >
+      Skip to content
+    </a>
     <Navbar />
-    <HeroSection />
-    <ApplicationsSection />
-    <LocationSection />
-    <ContactSection />
+    <main id="main">
+      <Hero />
+      <Why />
+      <Different />
+      <WhereItWorks />
+      <Team />
+      <ContactSection />
+    </main>
     <Footer />
-  </div>
+    <WhatsAppFloat />
+  </>
 );
 
 export default Index;

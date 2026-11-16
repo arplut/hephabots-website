@@ -1,21 +1,20 @@
-# Hephabots preview landing
+# Hephabots website
 
-This repository contains the Hephabots preview landing site. It was originally bootstrapped from a third-party prototyping tool; references to that tool have been removed.
+One-page site for Hephabots: low-cost robot arms, built in India, starting with sorting dry waste.
+Live at https://www.hephabots.com (GitHub Pages, deployed on push to `main` by `.github/workflows/deploy.yml`).
 
 ## Local development
 
-Requirements: Node.js and npm/yarn.
-
-Install dependencies and start dev server:
-
 ```sh
 npm install
-npm run dev
+npm run dev     # http://localhost:8080
+npm run build   # outputs dist/
 ```
 
-## Deploying to GitHub Pages (project site)
+## Editing
 
-1. Build the project: `npm run build`.
-2. Commit the `dist` (or `build`) output to the `gh-pages` branch, or use an action to publish the `build` output to GitHub Pages.
+- Page copy: `src/components/landing/Sections.tsx` (sections 1–6) and `ContactSection.tsx` (closing band and form).
+- Contact details, WhatsApp, Google Sheet URL: `src/config/site.ts`.
+- SEO tags and Open Graph: `index.html`, image at `public/og-image.png`.
 
-If you want, I can add a GitHub Action workflow to automate publishing to GitHub Pages.
+**Before publishing, read [docs/FORM_SETUP.md](docs/FORM_SETUP.md).** It lists the values to fill in and how to connect the Google Sheet.
